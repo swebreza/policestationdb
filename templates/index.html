@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body><center>
+  <h1 style="color:red">FBI</h1><hr/><br/>
+    <h1>Police recode Criminal Recode</h1>
+    <hr/><hr/>
+    <a href="{% url 'insert' %}">Add Criminals Recode</a>
+    <hr/>
+    <table border=1>
+      <tr><td>ID</td>
+        <td>Name</td>
+        <td>Date</td>
+        <td>FIR</td>
+        <td>Punishment</td>
+        <td>Location</td>
+      </tr>
+      {% for display in hellow %}
+      <tr>
+        <td>{{display.id}}</td>
+        <td>{{display.name}}</td>
+        <td>{{display.date}}</td>
+        <td>{{display.fir}}</td>
+        <td>{{display.punishment}}</td>
+        <td>{{display.location}}</td>
+        <td><a href="/update/{{display.id}}">Update</a></td>
+        <td><a href="#">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </center></body>
+</html>

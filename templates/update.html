@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>Update The criminal recode</h1>
+      <hr />
+      <hr />
+      <form method="POST" action="/update/{{hellow.id}}">
+      {% csrf_token %}
+        <table border="1">
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name ="name" value="{{hellow.name}}" /></td>
+          </tr>
+          <tr>
+            <td>date</td>
+            <td><input type="text" name ="date" value="{{hellow.date}}" /></td>
+          </tr>
+          <tr>
+            <td>fir</td>
+            <td><input type="text" name="fir" value="{{hellow.fir}}" /></td>
+          </tr>
+          <tr>
+            <td>punishment</td>
+            <td><input type="text" name="punishment" value="{{hellow.punishment}}" /></td>
+          </tr>
+          <tr>
+            <td>location</td>
+            <td><input type="text" name="location" value="{{hellow.location}}" /></td>
+          </tr>
+        </table>
+        <input type="submit" value="Update criminal recode" />
+        <a href="{% url 'display' %}">Homepage</a>
+        <hr/>
+        {% if messages %}
+        {% for result in messages %}
+        {{result}}
+        {% endfor %}
+        {% endif %}
+      </form>
+    </center>
+  </body>
+</html>

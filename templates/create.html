@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+  </head>
+  <body>
+    <center>
+      <h1 style="color:red">FBI</h1><hr/><br/>
+      <h1>Insert Criminal Recodes</h1>
+      <hr />
+      <hr />
+      <form method="POST">
+        {% csrf_token %}
+        <table>
+          <tr>
+            <td>Name of Criminal</td>
+            <td><input type="text" name="name" placeholder="Name" /></td>
+          </tr>
+          <tr>
+            <td>Date</td>
+            <td><input type="text" name="date" placeholder="date" /></td>
+          </tr>
+          <tr>
+            <td>FIR</td>
+            <td><input type="text" name="fir" placeholder="FIR" /></td>
+          </tr>
+          <tr>
+            <td>Punishment</td>
+            <td>
+              <input type="text" name="punishment" placeholder="Punishment" />
+            </td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td>
+              <input type="text" name="location" placeholder="Location" />
+            </td>
+          </tr>
+        </table>
+        <input type="submit" value="insert" href="{% url 'display' %}" />
+        <a href="{% url 'display' %}">Homepage</a>
+        <hr />
+        {% if messages %} 
+        {% for result in messages %}
+        <b style="color: green">{{result}}</b>
+        {% endfor %}
+         {% endif %}
+      </form>
+    </center>
+  </body>
+</html>
