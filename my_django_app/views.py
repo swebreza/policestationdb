@@ -36,3 +36,8 @@ def requpdate(request,id):
         return render(request,"update.html",{"hellow":requpdate})
     else:
          messages.success(request,"Criminal recode is updated  is not successful")
+def crdel(request,id):
+    delcriminal=hellow.objects.get(id=id) 
+    delcriminal.delete()
+    results = hellow.objects.all()
+    return render(request, "index.html", {"hellow": results})

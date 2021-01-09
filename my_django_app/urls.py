@@ -22,5 +22,7 @@ urlpatterns = [
     path('', views.display, name="display"),
     path('create', views.insert, name="insert"),
     path('update/<int:id>', views.update, name="update"),
-    path('update/<int:id>', views.requpdate, name="requpdate")
+    path('update/<int:id>', views.requpdate, name="requpdate"),
+    path('delete/<int:id>', views.crdel, name="crdel")
+
 ]
