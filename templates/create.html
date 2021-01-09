@@ -7,7 +7,9 @@
   </head>
   <body>
     <center>
-      <h1 style="color:red">FBI</h1><hr/><br/>
+      <h1 style="color: red">FBI</h1>
+      <hr />
+      <br />
       <h1>Insert Criminal Recodes</h1>
       <hr />
       <hr />
@@ -42,11 +44,9 @@
         <input type="submit" value="insert" href="{% url 'display' %}" />
         <a href="{% url 'display' %}">Homepage</a>
         <hr />
-        {% if messages %} 
-        {% for result in messages %}
+        {% if messages %} {% for result in messages %}
         <b style="color: green">{{result}}</b>
-        {% endfor %}
-         {% endif %}
+        {% endfor %} {% endif %}
       </form>
     </center>
   </body>

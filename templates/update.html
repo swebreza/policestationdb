@@ -11,15 +11,15 @@
       <hr />
       <hr />
       <form method="POST" action="/update/{{hellow.id}}">
-      {% csrf_token %}
+        {% csrf_token %}
         <table border="1">
           <tr>
             <td>Name</td>
-            <td><input type="text" name ="name" value="{{hellow.name}}" /></td>
+            <td><input type="text" name="name" value="{{hellow.name}}" /></td>
           </tr>
           <tr>
             <td>date</td>
-            <td><input type="text" name ="date" value="{{hellow.date}}" /></td>
+            <td><input type="text" name="date" value="{{hellow.date}}" /></td>
           </tr>
           <tr>
             <td>fir</td>
@@ -27,21 +27,27 @@
           </tr>
           <tr>
             <td>punishment</td>
-            <td><input type="text" name="punishment" value="{{hellow.punishment}}" /></td>
+            <td>
+              <input
+                type="text"
+                name="punishment"
+                value="{{hellow.punishment}}"
+              />
+            </td>
           </tr>
           <tr>
             <td>location</td>
-            <td><input type="text" name="location" value="{{hellow.location}}" /></td>
+            <td>
+              <input type="text" name="location" value="{{hellow.location}}" />
+            </td>
           </tr>
         </table>
         <input type="submit" value="Update criminal recode" />
         <a href="{% url 'display' %}">Homepage</a>
-        <hr/>
-        {% if messages %}
-        {% for result in messages %}
-        {{result}}
-        {% endfor %}
-        {% endif %}
+        <hr />
+        {% if messages %} {% for result in messages %}
+        <b style="color: green">{{result}}</b>
+        {% endfor %} {% endif %}
       </form>
     </center>
   </body>

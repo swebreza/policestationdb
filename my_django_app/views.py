@@ -27,10 +27,12 @@ def update(request,id):
     getcriminaldetails= hellow.objects.get(id=id)
     return render(request,'update.html',{"hellow":getcriminaldetails})
 
-def updatereq(request,id):
+def requpdate(request,id):
     updatereq=hellow.objects.get(id=id)
-    form=crform(request.POST,instance=updatereq)
+    form=crform(request.POST,instance=requpdate)
     if form.is_valid():
         form.save()
         messages.success(request,"Criminal recode is updated successfully...!!!!!!!!!!!")
-        return render(request,"update.html",{"hellow":updatereq})
+        return render(request,"update.html",{"hellow":requpdate})
+    else:
+         messages.success(request,"Criminal recode is updated  is not successful")

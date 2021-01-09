@@ -22,5 +22,5 @@ urlpatterns = [
     path('', views.display, name="display"),
     path('create', views.insert, name="insert"),
     path('update/<int:id>', views.update, name="update"),
-    path('update/<int:id>', views.updatereq, name="updatereq")
+    path('update/<int:id>', views.requpdate, name="requpdate")
 ]
