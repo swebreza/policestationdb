@@ -19,10 +19,27 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.display, name="display"),
+    path('', views.index, name="index"),
+    #auth
+    path('login/', views.login1, name="login"),
+    path('register/', views.register, name="register"),
+    path('logout/', views.logout_view, name='logout'),
+    ##criminal
+    path('criminal/', views.criminal, name="criminal"),
     path('create', views.insert, name="insert"),
     path('update/<int:id>', views.update, name="update"),
-    path('update/<int:id>', views.requpdate, name="requpdate"),
-    path('delete/<int:id>', views.crdel, name="crdel")
-
+    path('criminal/<int:id>', views.requpdate, name="requpdate"),
+    path('delete/<int:id>', views.crdel, name="crdel"),
+    ##officer
+    path('officer/', views.officerClass, name="officer"),
+    path('createofficer/', views.insertofficer, name="insertofficer"),
+    # path('updateofficer/<int:id>', views.updateofficer, name="updateofficer"),
+    # path('updateMeofficer/<int:id>', views.requpdateofficer, name="requpdateofficer"),
+    path('deleteofficer/<int:id>', views.crdelofficer, name="crdelofficer"),
+    ##fir
+    path('fir/', views.firClass, name="fir"),
+    path('createfir/', views.insertfir, name="insertfir"),
+    # path('updatefir/<int:id>', views.updatefir, name="updatefir"),
+    # path('updateMefir/<int:id>', views.requpdatefir, name="requpdatefir"),
+    path('deletefir/<int:id>', views.crdelfir, name="crdelfir"),
 ]
